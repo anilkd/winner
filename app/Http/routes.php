@@ -17,11 +17,11 @@ Route::group(['middleware' => 'auth'], function()
     Route::resource('contests', 'ContestController');
     Route::resource('gratifications', 'GratificationController');
     Route::resource('shows', 'ShowController');
+    Route::get('/', 'GratificationController@welcome');
+
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

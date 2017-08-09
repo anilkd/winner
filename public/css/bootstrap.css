@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
 
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item{
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;

@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <title>FM Winners</title>
-    <head>
-        <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet">
+{{--        <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet">--}}
+        <link href="{{ URL::asset('css/theme.css') }}" rel="stylesheet">
+        {{--<link href="{{ URL::asset('css/theme.css') }}" rel="stylesheet">--}}
         <script src="{{ URL::asset('https://code.jquery.com/jquery-1.10.2.min.js') }}"></script>
         <script src="{{ URL::asset('js/booty.js') }}"></script>
-    </head>
+        {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+        {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>--}}
+        {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
+
 </head>
 
 <body>
@@ -15,7 +19,12 @@
 <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand">FM Radio</a>
+            {{--<a href="#" class="navbar-brand">FM Radio</a>--}}
+            {{--<a href="#" class="pull-left"><img  src="img/fever-94.3-fm.jpg"></a>--}}
+            <a href="#" class="pull-left"><img style="max-width:100px;height:50px;" src="img/rsz_fever.jpg"></a>
+            {{--<a href="#" class="navbar-brand"><img style="max-width:200px;  max-height:50px; margin-top: -7px;" src="img/logo-half-vertical.png"></a>--}}
+
+
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>

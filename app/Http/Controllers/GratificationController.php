@@ -37,6 +37,13 @@ class GratificationController extends Controller
         return view('gratifications.index', array('gratifications' => $gratifications));
     }
 
+    public function welcome()
+    {
+        $gratifications = Gratification::paginate(15);
+
+        return view('welcome', array('gratifications' => $gratifications));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
