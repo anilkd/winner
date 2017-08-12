@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item">{!!link_to('/shows', 'Shows')!!}</li>
+        <li class=" breadcrumb-item active">Create</li>
+    </ul>
 
-    <br>
-    <br>
-    <br>
     <div class="container">
 
         <ul class="breadcrumb">

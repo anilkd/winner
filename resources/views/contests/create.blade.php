@@ -1,21 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <br>
-    <br>
-    <br>
     <ul class="breadcrumb">
-        <li>{!!link_to('/', 'Home')!!}</li>
-        <li> {!!link_to('/contests', 'Contests')!!}</li>
-        <li class="active">Create</li>
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item"> {!!link_to('/contests', 'Contests')!!}</li>
+        <li class=" breadcrumb-item active">Create</li>
     </ul>
-    <div>
 
-    </div>
 
-    <h1>New Contest</h1>
     <div class="container">
+    <legend>New Contest</legend>
 
         <div class="col-lg-6">
 
@@ -28,4 +22,4 @@
             {!! Form::close() !!}
         </div>
     </div>
-@endsection
+@stop

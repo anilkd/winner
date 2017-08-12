@@ -24,7 +24,6 @@ class WinnerController extends Controller
         'winner_name' => 'required',
         'phone_no' => 'required|phone|winner',
         'area_name' => 'required',
-        'gift_issued_date' => 'required',
     ];
 
     const editValidations = [
@@ -34,7 +33,6 @@ class WinnerController extends Controller
         'winner_name' => 'required',
         'phone_no' => 'required|phone',
         'area_name' => 'required',
-        'gift_issued_date' => 'required',
     ];
 
     /**

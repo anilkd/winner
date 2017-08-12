@@ -1,19 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <br>
-    <br>
-    <br>
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item">{!!link_to('/gratifications', 'Gratifications')!!}</li>
+        <li class="breadcrumb-item active">Create</li>
+    </ul>
     <div class="container">
-
-        <ul class="breadcrumb">
-            <li><a href="/winner/public">Home</a></li>
-            <li><a href="/winner/public/gratifications">Gratifications</a></li>
-            <li class="active">Create</li>
-        </ul>
-    </div>
-    <div class="container">
+        <legend>New Gratification</legend>
         <div class="col-lg-6">
             @include('errors.error-display')
 

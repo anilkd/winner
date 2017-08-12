@@ -2,20 +2,15 @@
 
 @section('content')
 
-    <br>
-    <br>
-    <br>
     <ul class="breadcrumb">
-        <li>{!!link_to('/', 'Home')!!}</li>
-        <li> {!!link_to('/contests', 'Contests')!!}</li>
-        <li class="active">Edit</li>
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item"> {!!link_to('/contests', 'Contests')!!}</li>
+        <li class=" breadcrumb-item active">Edit</li>
     </ul>
-    <div>
 
-    </div>
 
-    <h1>Edit Contest</h1>
     <div class="container">
+    <legend>Edit Contest</legend>
 
         <div class="col-lg-6">
 

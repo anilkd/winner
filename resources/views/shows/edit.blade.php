@@ -1,19 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item">{!!link_to('/shows', 'Shows')!!}</li>
+        <li class=" breadcrumb-item active">Edit</li>
+    </ul>
 
-    <br>
-    <br>
-    <br>
     <div class="container">
+        <legend> Edit Show</legend>
 
-        <ul class="breadcrumb">
-            <li><a href="/winner/public">Home</a></li>
-            <li><a href="/winner/public/shows">Shows</a></li>
-            <li class="active">Edit - {{$show->show_name}}</li>
-        </ul>
-    </div>
-    <div class="container">
         <div class="col-lg-6">
 
             @include('errors.error-display')

@@ -1,25 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <div class="col-lg-12 container">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item active">Winners</li>
+    </ul>
 
-        <ul class="breadcrumb">
-            <li><a href="/winner/public">Home</a></li>
-            <li class="active">Winners</li>
-        </ul>
-    </div>
-        <h1>Winners</h1>
-    <div >
-        <div>
-            {!!link_to('winners/create', 'Add Winner', $attributes = array('class' =>'btn btn-link'))!!}
+    <div class="container">
+        <legend>Winners</legend>
 
-        </div>
-        @if(isset($winners))
+        {!!link_to('winners/create', 'Add Winner', $attributes = array('class' =>'btn btn-link'))!!}
+
+        @if(isset($winners)&& count($winners)>0)
             <table class="table table-striped table-hover ">
-                <thead>
+                <thead class="thead-inverse">
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -30,6 +24,7 @@
                     <th>Email</th>
                     <th>Area</th>
                     <th>Issued</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,11 +48,11 @@
 
                 </tbody>
             </table>
-            {!! $winners->render() !!}
-    </div>
+            @include('pagination', ['collection' => $winners])
+        @else
+            {{--<p class="text-warning">No Winners yet</p>--}}
+        @endif
 
-    @else
-        <p class="text-warning">No Winners yet</p>
-    @endif
+    </div>
 
 @stop

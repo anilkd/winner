@@ -1,29 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <div class="col-lg-12 container">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item">{!!link_to('/shows', 'Shows')!!}</li>
+    </ul>
 
-        <ul class="breadcrumb">
-            <li><a href="/winner/public">Home</a></li>
-            <li class="active">Shows</li>
-        </ul>
-    </div>
-    <h1>Shows</h1>
-    <div>
-        <div>
+
+
+    <div class="container">
+        <legend>Shows</legend>
             {!!link_to('shows/create', 'Add Show', $attributes = array('class' =>'btn btn-link'))!!}
-        </div>
         @if(isset($shows)&& count($shows)>0)
             <table class="table table-striped table-hover ">
-                <thead>
+                <thead class="thead-inverse">
                 <tr>
                     <th>#</th>
                     <th>Show Name</th>
                     <th>Start Time</th>
                     <th>End Time</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -41,11 +37,11 @@
 
                 </tbody>
             </table>
-            {!! $shows->render() !!}
+            @include('pagination', ['collection' => $shows])
     </div>
 
     @else
-        <p class="text-warning">No Shows yet</p>
+        {{--<p class="text-warning">No Shows yet</p>--}}
     @endif
 
 @stop

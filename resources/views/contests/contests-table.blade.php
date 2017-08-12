@@ -1,6 +1,6 @@
 @if(isset($contests)&& count($contests)>0)
     <table class="table table-striped table-hover ">
-        <thead>
+        <thead class="thead-inverse">
         <tr>
             <th>#</th>
             <th>Name</th>

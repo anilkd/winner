@@ -1,31 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <div class="col-lg-12 container">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">{!!link_to('/', 'Home')!!}</li>
+        <li class="breadcrumb-item active">Gratifications</li>
+    </ul>
+    <div class="container">
 
-        <ul class="breadcrumb">
-            <li><a href="/winner/public">Home</a></li>
-            <li class="active">Gratifications</li>
-        </ul>
-    </div>
-    <h1>Gratifications</h1>
-    <div>
+        <legend>Gratifications</legend>
         <div>
             {!!link_to('gratifications/create', 'Add Gratification', $attributes = array('class' =>'btn btn-link'))!!}
 
         </div>
-         @if(isset($gratifications)&& count($gratifications)>0)
+        @if(isset($gratifications)&& count($gratifications)>0)
             <table class="table table-striped table-hover ">
-                <thead>
+                <thead class="thead-inverse">
                 <tr>
                     <th>#</th>
                     <th>Name</th>
                     <th>Value</th>
                     <th>Quantity</th>
                     <th>Expire Date</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,11 +41,10 @@
 
                 </tbody>
             </table>
-            {!! $gratifications->render() !!}
+            @include('pagination', ['collection' => $gratifications])
+        @else
+            <p class="text-warning">No Gratifications yet</p>
+        @endif
     </div>
-
-    @else
-        <p class="text-warning">No Gratifications yet</p>
-    @endif
 
 @stop
