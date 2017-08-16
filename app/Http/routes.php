@@ -17,7 +17,10 @@ Route::group(['middleware' => 'auth'], function()
     Route::resource('contests', 'ContestController');
     Route::resource('gratifications', 'GratificationController');
     Route::resource('shows', 'ShowController');
+    Route::controller('shows', 'ShowController');
     Route::get('/', 'GratificationController@welcome');
+    Route::get('report/shows/{id}', 'ShowController@exportPDF');
+    Route::get('report/contests/{id}', 'ContestController@exportPDF');
 
 });
 

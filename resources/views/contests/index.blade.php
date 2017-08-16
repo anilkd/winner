@@ -30,7 +30,7 @@
 
                     <tr>
                         <td>{{$contest->id}}</td>
-                        <td>{{$contest->name}}</td>
+                        <td>{!!link_to('contests/'.$contest->id, $contest->name, $attributes = array())!!}</td>
                         <td>{{$contest->gratification()->grat_name}}</td>
                         <td>{{$contest->start_date}}</td>
                         <td>{{$contest->end_date}}</td>

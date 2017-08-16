@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use App\Winner;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ContestController extends Controller
 {
@@ -84,7 +86,18 @@ class ContestController extends Controller
      */
     public function show($id)
     {
-        //
+        $contest = Contest::find($id);
+        $winners = Winner::paginate(15);
+        return view('contests.display', array('contest' => $contest, 'winners' => $winners));
+    }
+
+
+    public function exportPDF($id){
+        $contest = Contest::find($id);
+        $winners = Winner::paginate(15);;
+//        $winners = Winner::where('contest_id', $contest->id)->paginate(15);
+        $pdf = PDF::loadView('reports.contest',array('contest' => $contest, 'winners' => $winners));
+        return $pdf->download($contest->name.'-report.pdf');
     }
 
     /**

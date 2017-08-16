@@ -26,11 +26,11 @@
     </button>
 
     {{--<a href="#" class="navbar-brand">FM Radio</a>--}}
-    {{--<a href="#" class="pull-left"><img  src="img/fever-94.3-fm.jpg"></a>--}}
+    {{--<a href="#" class="pull-left"><img  src="img/rsz_fever.jpg"></a>--}}
     {{--<a href="#" class="navbar-brand">Fm Radio</a>--}}
 
         <a class="navbar-brand" href="/winner">
-            <img src="img/rsz_fever.jpg" width="50" height="50" alt="">
+            <img src="img/rsz_fever.jpg" width="150" height="150" alt="">
         </a>
     {{--<a href="#" class="navbar-brand"><img style="max-width:200px;  max-height:50px; margin-top: -7px;" src="img/logo-half-vertical.png"></a>--}}
 

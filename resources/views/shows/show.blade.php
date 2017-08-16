@@ -11,9 +11,10 @@
     <div class="container">
         <div class="col-lg-12">
             <legend>{{$show->show_name}} - Live Contests</legend>
-
+            {!! link_to_action('ShowController@exportPDF', 'Export',  $attributes = array($show->id)) !!}
             <div class="panel-body">
                 @if(isset($contests)&& count($contests)>0)
+
                     <table class="table table-striped table-hover ">
                         <thead class="thead-inverse">
                         <tr>

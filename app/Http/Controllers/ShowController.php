@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ShowController extends Controller
 {
@@ -79,6 +80,18 @@ class ShowController extends Controller
         });
 
         return view('shows.show', array('show' => $show, 'contests' => $filtered->all()));
+    }
+
+    public function exportPDF($id){
+        $show = Show::find($id);
+        $contests=$show->contests()->get();
+        $filtered = $contests->filter(function ($value) {
+            $today = new DateTime();
+            return DateTime::createFromFormat('Y-m-d', $value->end_date)->getTimestamp()>= $today->getTimestamp();
+        });
+
+        $pdf = PDF::loadView('reports.show',array('show' => $show, 'contests' => $filtered->all()));
+        return $pdf->download($show->show_name.'-report.pdf');
     }
 
     /**
