@@ -96,7 +96,7 @@ class ContestController extends Controller
         $contest = Contest::find($id);
         $winners = Winner::paginate(15);;
 //        $winners = Winner::where('contest_id', $contest->id)->paginate(15);
-        $pdf = PDF::loadView('reports.contest',array('contest' => $contest, 'winners' => $winners));
+        $pdf = PDF::setOptions(['dpi' => 300,"isHtml5ParserEnabled"=>true,'defaultFont' => 'sans-serif'])->loadView('reports.contest',array('contest' => $contest, 'winners' => $winners));
         return $pdf->download($contest->name.'-report.pdf');
     }
 
