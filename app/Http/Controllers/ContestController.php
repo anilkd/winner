@@ -87,15 +87,14 @@ class ContestController extends Controller
     public function show($id)
     {
         $contest = Contest::find($id);
-        $winners = Winner::paginate(15);
+        $winners = Winner::where('contest_id', $contest->id)->paginate(15);
         return view('contests.display', array('contest' => $contest, 'winners' => $winners));
     }
 
 
     public function exportPDF($id){
         $contest = Contest::find($id);
-        $winners = Winner::paginate(15);;
-//        $winners = Winner::where('contest_id', $contest->id)->paginate(15);
+        $winners =  Winner::where('contest_id', $contest->id)->get();
         $pdf = PDF::setOptions(['dpi' => 300,"isHtml5ParserEnabled"=>true,'defaultFont' => 'sans-serif'])->loadView('reports.contest',array('contest' => $contest, 'winners' => $winners));
         return $pdf->download($contest->name.'-report.pdf');
     }
